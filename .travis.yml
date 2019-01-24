@@ -16,7 +16,7 @@ before_install:
   - cd ..
   - git clone https://github.com/crimson-unicorn/parsers.git
   - cd parsers/cdm/ProvParser
-  - pip install .
+  - sudo pip install .
 
 script:
   - make validate
