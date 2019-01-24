@@ -26,3 +26,6 @@ all: record_version record_config record_state wget
 
 validate:
 	camtool --validate wget.log
+	mkdir data
+	mv wget.log data/
+	python -m parsers/cdm/ProvParser/provparser.pp -t camflow -v -i data/
