@@ -3,7 +3,7 @@ cache: bundler
 dist: trusty
 
 before_install:
-  - sudo apt-get install -y graphviz python-pip libyajl2 libgflags-dev libsnappy-dev zlib1g-dev libbz2-dev libzstd-dev cmake build-essential
+  - sudo apt-get install -y graphviz python-pip libyajl2 cmake build-essential
   - gem install camtool
   - git clone https://github.com/facebook/rocksdb.git
   - cd rocksdb
