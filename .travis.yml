@@ -3,7 +3,8 @@ cache: bundler
 dist: xenial
 
 before_install:
-  - sudo apt-get install -y graphviz python-pip libyajl2 cmake build-essential 
+  - pwd
+  - sudo apt-get install -y graphviz python-pip libyajl2 cmake build-essential
   - sudo apt-get install -y libgflags-dev
   - sudo apt-get install -y libsnappy-dev zlib1g-dev libbz2-dev liblz4-dev libzstd-dev
   - gem install camtool
@@ -18,6 +19,8 @@ before_install:
   - cd parsers/cdm/ProvParser
   - sudo pip install .
   - cd ../../../
+  - ls
+  - pwd
 
 script:
   - make validate
