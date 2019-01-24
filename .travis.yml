@@ -3,7 +3,6 @@ cache: bundler
 dist: xenial
 
 before_install:
-  - pwd
   - sudo apt-get install -y graphviz python-pip libyajl2 cmake build-essential
   - sudo apt-get install -y libgflags-dev
   - sudo apt-get install -y libsnappy-dev zlib1g-dev libbz2-dev liblz4-dev libzstd-dev
@@ -18,9 +17,7 @@ before_install:
   - git clone https://github.com/crimson-unicorn/parsers.git
   - cd parsers/cdm/ProvParser
   - sudo pip install .
-  - cd ../../../
-  - ls
-  - pwd
+  - cd /home/travis/build/CamFlow/example-datasets/
 
 script:
   - make validate
