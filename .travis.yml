@@ -4,14 +4,8 @@ dist: trusty
 
 before_install:
   - sudo apt-get install -y graphviz python-pip libyajl2 cmake build-essential
+  - sudo apt-get install -y librocksdb-dev librocksdb
   - gem install camtool
-  - git clone https://github.com/facebook/rocksdb.git
-  - cd rocksdb
-  - mkdir build && cd build
-  - cmake ..
-  - make
-  - make install INSTALL_PATH=/usr
-  - cd ..
   - git clone https://github.com/crimson-unicorn/parsers.git
   - cd parsers/cdm/ProvParser
   - pip install .
