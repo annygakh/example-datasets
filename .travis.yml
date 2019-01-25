@@ -20,6 +20,7 @@ before_install:
   - cd /home/travis/build/CamFlow/example-datasets/
 
 script:
+  - python --version
   - make validate
 
 notifications:
