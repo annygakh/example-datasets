@@ -16,11 +16,10 @@ before_install:
   - cd ..
   - git clone https://github.com/crimson-unicorn/parsers.git
   - cd parsers/cdm/ProvParser
-  - sudo pip install .
+  - sudo python setup.py install
   - cd /home/travis/build/CamFlow/example-datasets/
 
 script:
-  - python --version
   - make validate
 
 notifications:
