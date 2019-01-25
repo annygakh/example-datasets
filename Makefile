@@ -28,4 +28,4 @@ validate:
 	camtool --validate wget.log
 	mkdir data
 	mv wget.log data/
-	python -m parsers/cdm/ProvParser/provparser.pp -t camflow -v -i data/
+	cd parsers/cdm/ProvParser && python -m provparser.pp -t camflow -v -i ../../../data
