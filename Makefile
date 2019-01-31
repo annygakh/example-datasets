@@ -20,7 +20,13 @@ record_config:
 record_state:
 	camflow -s > state.txt
 
-wget: restart_service
+prepare_examples:
+	mkdir -p build
+	cd build && git clone https://github.com/camflow/examples
+	cd build/examples && make all
+
+wget:
+	$(MAKE) restart_service
 	sudo camflow --track-file /bin/wget true
 	wget www.google.com
 	sudo camflow --track-file /bin/wget false
@@ -28,7 +34,13 @@ wget: restart_service
 	cp /tmp/audit.log wget.log
 	rm index.html
 
-all: camflow_config record_version record_config record_state wget
+pipe:
+	$(MAKE) restart_service
+	./build/examples/provenance/pipe.o
+	sleep 10
+	cp /tmp/audit.log pipe.log
+
+all: camflow_config record_version record_config record_state wget pipe restart_service
 
 validate:
 	camtool --validate wget.log
