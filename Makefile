@@ -43,7 +43,12 @@ pipe:
 all: record_version record_config record_state wget pipe restart_service
 
 validate:
+	camtool --validate pipe.log
 	camtool --validate wget.log
+	mkdir data
+	mv pipe.log data/
+	provparser -t camflow -v -k -i data/
+	rm -rf data
 	mkdir data
 	mv wget.log data/
 	provparser -t camflow -v -k -i data/
