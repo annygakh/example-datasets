@@ -40,7 +40,7 @@ pipe:
 	sleep 10
 	cp /tmp/audit.log pipe.log
 
-all: camflow_config record_version record_config record_state wget pipe restart_service
+all: record_version record_config record_state wget pipe restart_service
 
 validate:
 	camtool --validate wget.log
