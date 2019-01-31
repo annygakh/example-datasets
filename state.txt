@@ -1,18 +1,14 @@
-Machine id: 1958431827
-Policy hash: D9C87822B3283448668A3D44B9FADE25A5ECB822CEF3E6A5C4C5ADAFA054633
+Machine id: 953997188
+Policy hash: 846E8B8E215CA3A1BAE6B18F2DA76344FB3936568D7E73567C52768F59B
 Provenance capture:
 - capture enabled;
 - all disabled;
-- provenance has been captured;
-- node compression enabled;
-- edge compression enabled;
+- provenance was not captured;
+- node compression disabled;
+- edge compression disabled;
 - duplication disabled;
 
-Node filter (4000c80):
-inode_unknown
-directory
-char
-envp
+Node filter (0):
 Derived filter (0):
 Generated filter (0):
 Used filter (0):

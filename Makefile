@@ -5,6 +5,12 @@ restart_service:
 	sudo systemctl start camflowd
 	stat /tmp/audit.log
 
+camflow_config:
+	sudo camflow --compress-node false
+	sudo camflow --compress-edge false
+	sudo camflow --duplicate false
+	sudo camflow --reset-filter
+
 record_version:
 	camflow -v > version.txt
 
@@ -22,7 +28,7 @@ wget: restart_service
 	cp /tmp/audit.log wget.log
 	rm index.html
 
-all: record_version record_config record_state wget
+all: camflow_config record_version record_config record_state wget
 
 validate:
 	camtool --validate wget.log

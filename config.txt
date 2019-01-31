@@ -3,14 +3,10 @@
 machine_id=0
 enabled=true
 all=false
-node_filter=inode_unknown
-node_filter=directory
-node_filter=char
-node_filter=envp
 
 [compression]
-node=true
-edge=true
+node=false
+edge=false
 duplicate=false
 
 [ipv4-ingress]
